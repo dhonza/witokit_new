@@ -7,5 +7,5 @@ setup(
    author='Tomas Mlynar',
    author_email='tomas@mlynar.ml',
    packages=['witokit_new'],  #same as name
-   install_requires=['tqdm', 'bs4', 'bz2'], #external packages as dependencies
+   #install_requires=['tqdm', 'bs4', 'bz2'], #external packages as dependencies
 )
