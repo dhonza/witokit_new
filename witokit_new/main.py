@@ -13,8 +13,8 @@ import requests
 from tqdm import tqdm, tqdm_notebook
 from bs4 import BeautifulSoup
 
-import utils.files as futils
-import utils.urls as uutils
+import witokit_new.utils.files as futils
+import witokit_new.utils.urls as uutils
 
 __all__ = ('download', 'extract')
 

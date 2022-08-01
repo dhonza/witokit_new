@@ -1,6 +1,6 @@
 """URL utils."""
 
-import witokit_new.utils.constants as const
+import witokit.utils.constants as const
 
 __all__ = ('get_wikipedia_dump_url', 'get_wikipedia_multi_pattern',
            'get_wiki_arxiv_url', 'get_wikipedia_single_pattern')
