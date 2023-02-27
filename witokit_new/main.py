@@ -55,14 +55,16 @@ def _collect_wiki_arxiv_hrefs(wiki_dump_url: str, lang: str, date: str) -> list:
         for link in soup.find_all('a'):
             pattern = uutils.get_wikipedia_multi_pattern(lang, date)
             href = link.get('href')
-            if re.match(pattern, href):
-                wiki_arxiv_hrefs.append(href)
+            mt = re.match(pattern, href)
+            if mt:
+                wiki_arxiv_hrefs.append(mt.group(1))
         if not wiki_arxiv_hrefs:
             for link in soup.find_all('a'):
                 pattern = uutils.get_wikipedia_single_pattern(lang, date)
                 href = link.get('href')
-                if re.match(pattern, href):
-                    wiki_arxiv_hrefs.append(href)
+                mt = re.match(pattern, href)
+                if mt:
+                    wiki_arxiv_hrefs.append(mt.group(1))
         if not wiki_arxiv_hrefs:
             print('ERROR: No wikipedia arxiv found!', file=stderr)
     except urllib.error.HTTPError as error:
